@@ -209,14 +209,14 @@ gcloud functions deploy classify_flower --region=europe-west4 --source=function 
 Tensorboard:
 #+BEGIN_SRC
 pip3 install protobuf==3.20.*
-tb-gcp-uploader --tensorboard_resource_name projects/936888853746/locations/europe-west4/tensorboards/8377223072490455040 --logdir=csis-data-warehouse/map/iris/lesson --experiment_name=iris --one_shot=True
+tb-gcp-uploader --tensorboard_resource_name projects/<project ID>/locations/europe-west4/tensorboards/8377223072490455040 --logdir=csis-data-warehouse/map/iris/lesson --experiment_name=iris --one_shot=True
 #+END_SRC
 
 ** Steps [8/11]
 *** 
 *** Deployment
 1. [ ] Create the learner map.
-2. [ ] Push the Docker image =europe-west4-docker.pkg.dev/machine-learning-beb494fb9629/map/$MAP_NAME= to the =Artifact registry=.
+2. [ ] Push the Docker image =europe-west4-docker.pkg.dev/<project name>/map/$MAP_NAME= to the =Artifact registry=.
 3. [ ] Upload the data to a bucket (or to BigQuery).
 4. [ ] Create a new training pipeline with a custom container under =Training=.
 5. [ ] Import the model to the =Model registry= (use a pre-built container).
@@ -233,7 +233,7 @@ tb-gcp-uploader --tensorboard_resource_name projects/936888853746/locations/euro
 1. [X] Create the learner map.
 2. [X] Upload the data to a bucket or to BigQuery.
 3. [X] Create an endpoint and specify its ID in =cloud_params.json=.
-4. [X] Push the Docker image =europe-west4-docker.pkg.dev/machine-learning-beb494fb9629/map/$MAP_NAME= to the =Artifact registry=.
+4. [X] Push the Docker image =europe-west4-docker.pkg.dev/<project name>/map/$MAP_NAME= to the =Artifact registry=.
 5. [X] Create a new training pipeline under =Training=.
 6. [X] Import the model to the =Model registry= (use a pre-built container).
 7. [X] Deploy the model to the artifacts registry.
