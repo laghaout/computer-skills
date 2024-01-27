@@ -1,7 +1,7 @@
 #+TITLE: Missing semester
 
-* [[https://pre-commit.com/][Pre-commit]]
-* [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]
+* [[https://pre-commit.com/][Pre-commit]]: Pre-commit hooks to facilitates CI/CD.
+* [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]: Python packaging and dependency management
 ** Steps
 1. =poetry init=: Will generate the pyproject TOML file if it does not exist.
 2. =poetry config virtualenvs.in-project true=: Ensures the .venv remains in the current directory. (optional)
@@ -24,22 +24,21 @@
 - Run a container with mounted volumes
   - =docker run -it -v <local folder>:<remote folder> <image name>=
   - =docker run -it -v $(pwd):/home/domains/ housebunting/tfcpu=
-- Commit a container to an image
-  - =docker commit <container ID> <image name>=
+- Commit a container to an image: =docker commit <container ID> <image name>=
 - Stop and remove all containers
   - =docker stop $(docker container ls -q -a)=
   - =docker rm $(docker container ls -q -a)=
-- Remove all dangling images
-  - =docker rmi $(docker images -f dangling=true -q)=
+- Remove all dangling images: =docker rmi $(docker images -f dangling=true -q)=
 - Push to Docker hub
   - =docker tag <image name> housebunting/<image name>=
   - =docker push housebunting/<image name>=
-- Build and tag an image
-  - =docker build --tag=mlgpu .=
-- Network list
-  - =docker network ls=
-- Inspect
-  - =docker inspect <image name>=
+- Build and tag an image: =docker build --tag=mlgpu .=
+- Network list: =docker network ls=
+- Inspect: =docker inspect <image name>=
+- Get into the bash shell of a running container: =docker exec -it $CONTAINER_ID /bin/bash=
+- List all the containers: =docker ps -a=
+- Detach from a container: =ctrl-P= then =ctrl-Q=
+- Attach to a container: =docker attach $CONTAINER_ID=
 ** [[https://docs.docker.com/compose/gettingstarted/][=docker-compose=]]
 It is a more structured, YAML-based alternative to =docker run= which can manage several networked containers all in one place.
 - =docker-compose ps=: List of containers launched by =docker-compose=
