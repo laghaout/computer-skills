@@ -1,5 +1,30 @@
 #+TITLE: Missing semester
 
+* LLM
+- Prompt-completion
+- Context window
+- Foundation model (base LLM)
+- Prompt engineering vs. instruction fine-tuning
+- Quantization to reduce the memory footprint
+- In-context learning means you provide prompt completion examples during inference
+- BLEU focuses on precision in matching generated output to the reference text and is used for text translation. ROUGE focuses on recall.
+- Catastrophic forgetting
+  - Multitask fine-tuning
+  - Fix the parameters to be tuned and freeze the rest: Parameter Efficient Fine-Tuning (PEFT)
+    - *Select* a subset of initial LLM parameters to fine-tune
+    - *Reparametrize* the model weights using a low-rank representation: 
+      - LoRA: usually only applied on the attention weights, not the feed-forward. The rank r is a hyperparameter
+    - *Add* trainable layers or parameters to the model: Keep the original model frozen and add a new layer.
+      - Adapters
+      - Soft prompts (*Prompt tuning*). Manipulate the input. (? Is this some kind of AI-driven prompt engineering?)
+	- Prepend the prompt token: Input manipulation (as opposed to working with the LLM itself)
+- Fine-tuned LAnguage Net (FLAN)
+- Metrics (always need to be compared for the same task)
+  - ROUGE and BLEU
+  - Precision and recall of n-grams of LCS (Longest Common Subsequences).
+  - Clipping function (? to avoid "class imbalance"?)
+- Hallucination
+- Stemming
 * [[https://pre-commit.com/][Pre-commit]]: Pre-commit hooks to facilitates CI/CD.
 * [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]: Python packaging and dependency management
 ** Steps

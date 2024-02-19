@@ -1,75 +1,106 @@
 
 # Table of Contents
 
-1.  [Pre-commit: Pre-commit hooks to facilitates CI/CD.](#org30ac747)
-2.  [Poetry: Python packaging and dependency management](#orgbad8b6f)
-    1.  [Steps](#orgdd07555)
-    2.  [Publish to PyPi](#org51acfd9)
-3.  [Docker](#org2fa5315)
-    1.  [Docker commands](#org1444bf0)
-    2.  [`docker-compose`](#orgdd2bb08)
-4.  [Git and GitHub](#org2d8ddf9)
-    1.  [`diff` and `patch`](#org2d05441)
-    2.  [Setup](#org135b5ad)
-    3.  [Showing stuff](#orgd734633)
-    4.  [Staging and stating-related commands](#org7efd933)
-    5.  [Committing and undoing commits](#org424172f)
-    6.  [Branches](#orga507109)
-    7.  [Working with the remote](#org180893a)
-    8.  [Rebasing](#org32a1170)
-    9.  [Collaboration](#org6deca19)
-    10. [Multiple GitHub accounts](#orgd56cc2b)
-5.  [TensorFlow](#org1cafdcc)
-    1.  [Loss functions](#org0f76489)
-6.  [Google Cloud Platform](#orgbe908f1)
-    1.  [Commands](#orgffcc12c)
-    2.  [Steps <code>[8/11]</code>](#org0d74f5b)
-        1.  [](#org021d332)
-        2.  [Deployment](#org78ed54f)
-        3.  [Old (with the creation of the endpoint first&#x2014;which makes more sense)](#org95bdc9d)
-7.  [Image manipulation](#org2bd66be)
-    1.  [Reduce image sizes](#orgfb2535a)
-8.  [GPG](#org525152a)
-9.  [Emacs](#orgdf47bfb)
-    1.  [Generic Emacs commands](#orgdef0d1a)
-    2.  [Outline](#orgc6cde4f)
-    3.  [Tables](#orgebb2e86)
-    4.  [Code](#orgd82ce6f)
-    5.  [LaTeX integration](#org9d93951)
-    6.  [Literate programming](#org557120e)
-    7.  [Todo stuff](#orgb184398)
-    8.  [do this. Use ShiftM Enter to create another one](#org4aeeed0)
-    9.  [cycle through states CcCt](#orgd06c971)
-    10. [Now what?](#orgcb8f68d)
-10. [Linux](#org2705d8e)
-    1.  [The shell](#org841dcec)
-    2.  [Shell scripting](#orgefe8bff)
-    3.  [Misc commands](#org51efd0e)
-    4.  [Networking](#org84ca09b)
-    5.  [Graphics](#org6f73325)
-    6.  [Configuration in Debian](#orgad23dbc)
-    7.  [tmux](#org769b14c)
-11. [ImageMagick](#org57c32c9)
-12. [SQL](#orgfd1ba78)
-    1.  [MySQL](#orgf83b33e)
-    2.  [PostgreSQL](#org3dcccee)
-13. [Vagrant](#org9f6a730)
-14. [LaTeX](#org22a1fde)
-15. [PySpark](#orge3bc800)
+1.  [LLM](#org3e193d2)
+2.  [Pre-commit: Pre-commit hooks to facilitates CI/CD.](#orga148224)
+3.  [Poetry: Python packaging and dependency management](#orgf0dfdd6)
+    1.  [Steps](#orgdaad05c)
+    2.  [Publish to PyPi](#org4464239)
+4.  [Docker](#orgef636c9)
+    1.  [Docker commands](#org54d48ea)
+    2.  [`docker-compose`](#org939d49b)
+5.  [Git and GitHub](#orgda16aa3)
+    1.  [`diff` and `patch`](#orgb53b842)
+    2.  [Setup](#org40345f1)
+    3.  [Showing stuff](#org3fc3abc)
+    4.  [Staging and stating-related commands](#org63f66b8)
+    5.  [Committing and undoing commits](#org262fb50)
+    6.  [Branches](#org8d87f34)
+    7.  [Working with the remote](#orgc670b05)
+    8.  [Rebasing](#orge0de87f)
+    9.  [Collaboration](#orgb20436c)
+    10. [Multiple GitHub accounts](#org91cf15c)
+6.  [TensorFlow](#orge92c631)
+    1.  [Loss functions](#org12a6ca6)
+7.  [Google Cloud Platform](#org02eb085)
+    1.  [Commands](#orgbe15fd7)
+    2.  [Steps <code>[8/11]</code>](#org932c19d)
+        1.  [](#org095e0fd)
+        2.  [Deployment](#org0ab57a8)
+        3.  [Old (with the creation of the endpoint first&#x2014;which makes more sense)](#orgd9346cd)
+8.  [Image manipulation](#org05982ac)
+    1.  [Reduce image sizes](#org28a8742)
+9.  [GPG](#org4d43618)
+10. [Emacs](#org8ecfbe3)
+    1.  [Generic Emacs commands](#orgc5a3e8e)
+    2.  [Outline](#orgb260b5d)
+    3.  [Tables](#org2922c19)
+    4.  [Code](#org7773d12)
+    5.  [LaTeX integration](#org1987d55)
+    6.  [Literate programming](#org646fd28)
+    7.  [Todo stuff](#orgfd2668a)
+    8.  [do this. Use ShiftM Enter to create another one](#org592ed40)
+    9.  [cycle through states CcCt](#orgc3364b5)
+    10. [Now what?](#org5fa1f93)
+11. [Linux](#org6622d81)
+    1.  [The shell](#org848b855)
+    2.  [Shell scripting](#org84c136e)
+    3.  [Misc commands](#org60e8e58)
+    4.  [Networking](#org37446fa)
+    5.  [Graphics](#orgdce33df)
+    6.  [Configuration in Debian](#orgd75ee21)
+    7.  [tmux](#org29878b7)
+12. [ImageMagick](#org51a44b2)
+13. [SQL](#org102dd32)
+    1.  [MySQL](#org630119b)
+    2.  [PostgreSQL](#org1609279)
+14. [Vagrant](#org3ea5f0a)
+15. [LaTeX](#orga992f30)
+16. [PySpark](#org5bd58a3)
 
 
 
-<a id="org30ac747"></a>
+<a id="org3e193d2"></a>
+
+# LLM
+
+-   Prompt-completion
+-   Context window
+-   Foundation model (base LLM)
+-   Prompt engineering vs. instruction fine-tuning
+-   Quantization to reduce the memory footprint
+-   In-context learning means you provide prompt completion examples during inference
+-   BLEU focuses on precision in matching generated output to the reference text and is used for text translation. ROUGE focuses on recall.
+-   Catastrophic forgetting
+    -   Multitask fine-tuning
+    -   Fix the parameters to be tuned and freeze the rest: Parameter Efficient Fine-Tuning (PEFT)
+        -   **Select** a subset of initial LLM parameters to fine-tune
+        -   **Reparametrize** the model weights using a low-rank representation: 
+            -   LoRA: usually only applied on the attention weights, not the feed-forward. The rank r is a hyperparameter
+        -   **Add** trainable layers or parameters to the model: Keep the original model frozen and add a new layer.
+            -   Adapters
+            -   Soft prompts (**Prompt tuning**). Manipulate the input. (? Is this some kind of AI-driven prompt engineering?)
+                -   Prepend the prompt token: Input manipulation (as opposed to working with the LLM itself)
+-   Fine-tuned LAnguage Net (FLAN)
+-   Metrics (always need to be compared for the same task)
+    -   ROUGE and BLEU
+    -   Precision and recall of n-grams of LCS (Longest Common Subsequences).
+    -   Clipping function (? to avoid "class imbalance"?)
+-   Hallucination
+-   Stemming
+
+
+<a id="orga148224"></a>
 
 # [Pre-commit](https://pre-commit.com/): Pre-commit hooks to facilitates CI/CD.
 
 
-<a id="orgbad8b6f"></a>
+<a id="orgf0dfdd6"></a>
 
 # [Poetry](https://www.youtube.com/watch?v=0f3moPe_bhk): Python packaging and dependency management
 
 
-<a id="orgdd07555"></a>
+<a id="orgdaad05c"></a>
 
 ## Steps
 
@@ -83,7 +114,7 @@
 8.  `deactivate`: Deactivate the environment. Equivalent to leaving the shell.
 
 
-<a id="org51acfd9"></a>
+<a id="org4464239"></a>
 
 ## Publish to PyPi
 
@@ -93,12 +124,12 @@
 4.  `poetry publish -r test-pypi`
 
 
-<a id="org2fa5315"></a>
+<a id="orgef636c9"></a>
 
 # Docker
 
 
-<a id="org1444bf0"></a>
+<a id="org54d48ea"></a>
 
 ## Docker commands
 
@@ -125,7 +156,7 @@
 -   Attach to a container: `docker attach $CONTAINER_ID`
 
 
-<a id="orgdd2bb08"></a>
+<a id="org939d49b"></a>
 
 ## [`docker-compose`](https://docs.docker.com/compose/gettingstarted/)
 
@@ -135,12 +166,12 @@ It is a more structured, YAML-based alternative to `docker run` which can manage
 -   `docker compose run <service> env`: Environment variables available in the `<service>`
 
 
-<a id="org2d8ddf9"></a>
+<a id="orgda16aa3"></a>
 
 # Git and GitHub
 
 
-<a id="org2d05441"></a>
+<a id="orgb53b842"></a>
 
 ## `diff` and `patch`
 
@@ -148,7 +179,7 @@ It is a more structured, YAML-based alternative to `docker run` which can manage
     patch original_file.py < file.diff
 
 
-<a id="org135b5ad"></a>
+<a id="org40345f1"></a>
 
 ## Setup
 
@@ -159,7 +190,7 @@ It is a more structured, YAML-based alternative to `docker run` which can manage
 -   `git config --global core.editor emacs`: Change the default editor to emacs
 
 
-<a id="orgd734633"></a>
+<a id="org3fc3abc"></a>
 
 ## Showing stuff
 
@@ -172,7 +203,7 @@ It is a more structured, YAML-based alternative to `docker run` which can manage
 -   `git show <commit>:<file>`: Show an older version of the file.
 
 
-<a id="org7efd933"></a>
+<a id="org63f66b8"></a>
 
 ## Staging and stating-related commands
 
@@ -184,7 +215,7 @@ It is a more structured, YAML-based alternative to `docker run` which can manage
 -   `git restore --staged <file to unstage>`: Unstage a file. This is the new version that replaces `git reset`
 
 
-<a id="org424172f"></a>
+<a id="org262fb50"></a>
 
 ## Committing and [undoing](https://stackoverflow.com/questions/58003030/what-is-the-git-restore-command-and-what-is-the-difference-between-git-restor/66309040#66309040) commits
 
@@ -199,7 +230,7 @@ Cf. this [visualization](https://git-school.github.io/visualizing-git/) tool or 
 -   `git reset --{hard, mixed, soft} HEAD~<N>`: Remove `N` commits. `hard` resets the index and the working tree; `mixed` only resets the index; `soft` leaves both the index and the working tree unmodified (aka. "squashing").
 
 
-<a id="orga507109"></a>
+<a id="org8d87f34"></a>
 
 ## Branches
 
@@ -213,7 +244,7 @@ Cf. this [visualization](https://git-school.github.io/visualizing-git/) tool or 
 -   `git branch -d <branch>`: delete a local branch
 
 
-<a id="org180893a"></a>
+<a id="orgc670b05"></a>
 
 ## Working with the remote
 
@@ -231,7 +262,7 @@ Cf. this [visualization](https://git-school.github.io/visualizing-git/) tool or 
     1.  `git pull origin <remote branch>`:
 
 
-<a id="org32a1170"></a>
+<a id="orge0de87f"></a>
 
 ## Rebasing
 
@@ -265,12 +296,12 @@ After rebasing:
     * e5c58b4 Clean slate back in main
 
 
-<a id="org6deca19"></a>
+<a id="orgb20436c"></a>
 
 ## Collaboration
 
 
-<a id="orgd56cc2b"></a>
+<a id="org91cf15c"></a>
 
 ## Multiple GitHub accounts
 
@@ -281,7 +312,7 @@ After rebasing:
          IdentityFile ~/.ssh/id_rsa
 
 
-<a id="org1cafdcc"></a>
+<a id="orge92c631"></a>
 
 # TensorFlow
 
@@ -291,7 +322,7 @@ After rebasing:
 -   [ ] Use `tf.data` for the DGA classifier
 
 
-<a id="org0f76489"></a>
+<a id="org12a6ca6"></a>
 
 ## Loss functions
 
@@ -315,7 +346,7 @@ After rebasing:
                 -   softmax activation function
 
 
-<a id="orgbe908f1"></a>
+<a id="org02eb085"></a>
 
 # Google Cloud Platform
 
@@ -340,7 +371,7 @@ Steps:
 4.  Create a new streaming pipeline from template by specifying the input topic from Pub/Sub and the output table in BigQuery.
 
 
-<a id="orgffcc12c"></a>
+<a id="orgbe15fd7"></a>
 
 ## Commands
 
@@ -352,17 +383,17 @@ Tensorboard:
     tb-gcp-uploader --tensorboard_resource_name projects/<project ID>/locations/europe-west4/tensorboards/8377223072490455040 --logdir=csis-data-warehouse/map/iris/lesson --experiment_name=iris --one_shot=True
 
 
-<a id="org0d74f5b"></a>
+<a id="org932c19d"></a>
 
 ## Steps <code>[8/11]</code>
 
 
-<a id="org021d332"></a>
+<a id="org095e0fd"></a>
 
 ### 
 
 
-<a id="org78ed54f"></a>
+<a id="org0ab57a8"></a>
 
 ### Deployment
 
@@ -382,7 +413,7 @@ Tensorboard:
     -   [ ] `gcloud ai endpoints predict $ENDPOINT_ID --region=$REGION --json-request=request.json`
 
 
-<a id="org95bdc9d"></a>
+<a id="orgd9346cd"></a>
 
 ### Old (with the creation of the endpoint first&#x2014;which makes more sense)
 
@@ -403,12 +434,12 @@ Tensorboard:
     -   [ ] gcloud ai endpoints predict $ENDPOINT<sub>ID</sub> &#x2013;region=$REGION &#x2013;json-request=request.json
 
 
-<a id="org2bd66be"></a>
+<a id="org05982ac"></a>
 
 # Image manipulation
 
 
-<a id="orgfb2535a"></a>
+<a id="org28a8742"></a>
 
 ## Reduce image sizes
 
@@ -416,7 +447,7 @@ Tensorboard:
 -   Reduce PDF size: `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf pairgrid.pdf &`
 
 
-<a id="org525152a"></a>
+<a id="org4d43618"></a>
 
 # GPG
 
@@ -424,12 +455,12 @@ Tensorboard:
 -   Decrypt: `gpg --output DOC --decrypt DOC.gpg`
 
 
-<a id="orgdf47bfb"></a>
+<a id="org8ecfbe3"></a>
 
 # Emacs
 
 
-<a id="orgdef0d1a"></a>
+<a id="orgc5a3e8e"></a>
 
 ## Generic Emacs commands
 
@@ -525,7 +556,7 @@ Cx Left/Right switch between buffers
 Mx describe-bindings == Ch b
 
 
-<a id="orgc6cde4f"></a>
+<a id="orgb260b5d"></a>
 
 ## Outline
 
@@ -543,7 +574,7 @@ Text text text!
 [CSIS Security Group](https://csis.com)
 
 
-<a id="orgebb2e86"></a>
+<a id="org2922c19"></a>
 
 ## Tables
 
@@ -591,7 +622,7 @@ Text text text!
 CcCe ways to export
 
 
-<a id="orgd82ce6f"></a>
+<a id="org7773d12"></a>
 
 ## Code
 
@@ -606,7 +637,7 @@ CcCe ways to export
 CcCc will evaluate the results
 
 
-<a id="org9d93951"></a>
+<a id="org1987d55"></a>
 
 ## LaTeX integration
 
@@ -621,39 +652,39 @@ a & = 3 \cdot 3 + 1\\
 Note that one can export to beamer as LaTeX, but that seems to require some install.
 
 
-<a id="org557120e"></a>
+<a id="org646fd28"></a>
 
 ## Literate programming
 
 Literate programming is mixing natural language and computer programming. It is only useful for reserach papers or didactic purposes.
 
 
-<a id="orgb184398"></a>
+<a id="orgfd2668a"></a>
 
 ## Todo stuff
 
 
-<a id="org4aeeed0"></a>
+<a id="org592ed40"></a>
 
 ## TODO do this. Use ShiftM Enter to create another one
 
 
-<a id="orgd06c971"></a>
+<a id="orgc3364b5"></a>
 
 ## TODO cycle through states CcCt
 
 
-<a id="orgcb8f68d"></a>
+<a id="org5fa1f93"></a>
 
 ## TODO Now what?
 
 
-<a id="org2705d8e"></a>
+<a id="org6622d81"></a>
 
 # Linux
 
 
-<a id="org841dcec"></a>
+<a id="org848b855"></a>
 
 ## The shell
 
@@ -708,7 +739,7 @@ sh semester
 ./semester | grep -i last-modified > last-modified.txt
 
 
-<a id="orgefe8bff"></a>
+<a id="org84c136e"></a>
 
 ## Shell scripting
 
@@ -773,7 +804,7 @@ history
 nnn
 
 
-<a id="org51efd0e"></a>
+<a id="org60e8e58"></a>
 
 ## Misc commands
 
@@ -825,14 +856,14 @@ xxd
 xclip -sel c < myfile.txt
 
 
-<a id="org84ca09b"></a>
+<a id="org37446fa"></a>
 
 ## Networking
 
 dig nordea.dk -t ns
 
 
-<a id="org6f73325"></a>
+<a id="orgdce33df"></a>
 
 ## Graphics
 
@@ -842,7 +873,7 @@ sudo apt-get install librsvg2-bin
 rsvg-convert -f pdf -o t.pdf t.svg
 
 
-<a id="orgad23dbc"></a>
+<a id="orgd75ee21"></a>
 
 ## Configuration in Debian
 
@@ -853,7 +884,7 @@ sudo apt install -y gnome-disk-utility  # For mounting/unmounting disks, formatt
 sudo apt install tmux
 
 
-<a id="org769b14c"></a>
+<a id="org29878b7"></a>
 
 ## tmux
 
@@ -867,7 +898,7 @@ tmux attach -t my<sub>session</sub>
 Cb PageUp to scroll. Use Esc to get back to normal mode.
 
 
-<a id="org57c32c9"></a>
+<a id="org51a44b2"></a>
 
 # ImageMagick
 
@@ -878,12 +909,12 @@ Resize:
 mogrify -path fullpathto/temp2 -resize 60x60% -quality 60 -format jpg \*.png
 
 
-<a id="orgfd1ba78"></a>
+<a id="org102dd32"></a>
 
 # SQL
 
 
-<a id="orgf83b33e"></a>
+<a id="org630119b"></a>
 
 ## MySQL
 
@@ -894,7 +925,7 @@ desc MY<sub>TABLE</sub>;
 select \* from MY<sub>TABLE</sub> limit 10;
 
 
-<a id="org3dcccee"></a>
+<a id="org1609279"></a>
 
 ## PostgreSQL
 
@@ -908,7 +939,7 @@ psql secdns-master -U secdns
 &copy; (SELECT zone FROM whitelist) TO '~/Documents/SecureDNS/whitelist.csv' WITH CSV
 
 
-<a id="org9f6a730"></a>
+<a id="org3ea5f0a"></a>
 
 # Vagrant
 
@@ -921,7 +952,7 @@ vagrant halt
 Place the config file in the directory that I want to consider as local. Edit the configuration file to specify the default local and remote directories.
 
 
-<a id="org22a1fde"></a>
+<a id="orga992f30"></a>
 
 # LaTeX
 
@@ -930,7 +961,7 @@ sudo apt-get install texmaker
 pdflatex document.tex
 
 
-<a id="orge3bc800"></a>
+<a id="org5bd58a3"></a>
 
 # PySpark
 
