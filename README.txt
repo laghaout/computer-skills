@@ -25,6 +25,9 @@
   - Clipping function (? to avoid "class imbalance"?)
 - Hallucination
 - Stemming
+- Reinforcement Learning from Human Feedback (RLHF): Align with human feedback
+  - Human labelers score a dataset of completions by the original model based on alignment criteria like helpfulness, harmlessness, and honesty. This dataset is used to train the reward model that scores the model completions during the RLHF process.
+  - The LLM generates several completions for the same prompt and then human labelers rank those completions. Those ranking score then drive the "reward" of the reinforcement learning algorithm.
 * [[https://pre-commit.com/][Pre-commit]]: Pre-commit hooks to facilitates CI/CD.
 * [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]: Python packaging and dependency management
 ** Steps
