@@ -28,6 +28,7 @@
 - Reinforcement Learning from Human Feedback (RLHF): Align with human feedback
   - Human labelers score a dataset of completions by the original model based on alignment criteria like helpfulness, harmlessness, and honesty. This dataset is used to train the reward model that scores the model completions during the RLHF process.
   - The LLM generates several completions for the same prompt and then human labelers rank those completions. Those ranking score then drive the "reward" of the reinforcement learning algorithm.
+  - KL divergence is used to moderate the changes induced by the reinforcement learning such that the difference between the base model and and the one that is being optimized does not get too big
 * [[https://pre-commit.com/][Pre-commit]]: Pre-commit hooks to facilitates CI/CD.
 * [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]: Python packaging and dependency management
 ** Steps
@@ -183,6 +184,23 @@ Host *
      IdentityFile ~/.ssh/id_rsa
 #+END_SRC
 
+* Pandas
+- =df.info()=: Prints information about the DataFrame
+- =df.head()=: Prints first (n) rows of the DataFrame
+- =df.describe()=: Generates state of the columns
+- =df.apply()=: Applies functions on columns
+- =df.groupby()=: Applies aggregation of a column
+- =df.short_values()=: Sorts tables
+- =df.sample()=: Sample data
+- =pd.read_filetype(filename)=: Imports from a filetype
+- =df.to_filetype(filename)=: Exports to a filetype
+- =df.plot()=: Generates plot
+- =pd.to_datetime=: Converts object to a datetime column
+- =df.filter()=: Filter on columns
+- =df.drop()=: Drops rows based on a condition
+- =df.rank()=: Generates ranks on a column
+- =df1.append(df2)=: Adds the rows in df1 to the df2
+- =pd.isnull()=: Checks the null values
 * TensorFlow
 - [ ] The necessity of prefetching
 - [ ] =map= vs. =flat_map=
