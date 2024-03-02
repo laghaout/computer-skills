@@ -1,6 +1,30 @@
 #+TITLE: Missing semester
 
 * LLM
+** Questions / to-do [0/4]
+- [ ] What is a tokenizer?
+- [ ] What is Encoder, Decoder, Encoder-Decoder?
+  - [ ] Look at examples of GenAI and specify whether there are E, D, or ED
+- [ ] Autoregression
+- [ ] Review all the Notebooks
+** LLM optimization techniques
+*** Knowledge distillation
+- LLM teacher -> LLM student
+- Works best for encoder models (e.g., Bert)
+*** Post-Training Quantization (PTQ)
+- LLM -> 16-bit float or 8-bit integer quantized LLM
+- Applied to model weights and or activations
+*** Pruning
+- LLM -> Pruned LLM
+- Remove model weights that are close to zero
+- Requires model retraining
+** LLM lifecycle
+1. Pretraining: This is where the base model is built. This focuses on next-token prediction
+2. Prompt engineering: This aims at increasing the task performance. Only involves prompt customization.
+3. Prompt tuning and fine-tuning: This aims at increasing the task performance. Updates the LLM or adapter wieghts.
+4. Reinforcement learning from human feedback: Needs a separate reward model to align with human goals. Updates the LLM or adapter weights.
+5. Compression, optimization, and deployment: pruning, post-training quantization, or knowledge distillation.
+** Notes
 - Prompt-completion
 - Context window
 - Foundation model (base LLM)
@@ -28,7 +52,16 @@
 - Reinforcement Learning from Human Feedback (RLHF): Align with human feedback
   - Human labelers score a dataset of completions by the original model based on alignment criteria like helpfulness, harmlessness, and honesty. This dataset is used to train the reward model that scores the model completions during the RLHF process.
   - The LLM generates several completions for the same prompt and then human labelers rank those completions. Those ranking score then drive the "reward" of the reinforcement learning algorithm.
-  - KL divergence is used to moderate the changes induced by the reinforcement learning such that the difference between the base model and and the one that is being optimized does not get too big
+  - KL divergence is used to moderate the changes induced by the reinforcement learning such that the difference between the base model and and the one that is being optimized does not get too big. This avoids that the rewarding (against, e.g., toxic languages) does not get hacked.
+** Retrieval Augmented Generation (RAG)
+- Instead of retraining the model to update it with new knowledge, RAG mitigates the knowledge cutoff.
+- LangChain can help chop off the retrieved, external documentation so that it fits in the context window.
+** Chain of thought prompting
+- Prompt fine-tuning should include the chain of thought
+** Program Aided Language (PAL) models
+- LLM + Code interpreter (Python). This basically translates the prompt to Python code.
+** ReAct: Synergize reasoning and action
+- Prompting strategby that combines chain-of-thought and action planning
 * [[https://pre-commit.com/][Pre-commit]]: Pre-commit hooks to facilitates CI/CD.
 * [[https://www.youtube.com/watch?v=0f3moPe_bhk][Poetry]]: Python packaging and dependency management
 ** Steps
